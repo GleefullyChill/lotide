@@ -11,8 +11,7 @@ const eqArrays = function(_first, _second) {
   if (_first.length !== _second.length){
     return false;
   }
-  for (let i of _first) {
-    console.log(i)
+  for (let i = 0; i <= _first.length - 1; i++) {
     if (_first[i] !== _second[i]) {
       return false;
     }
@@ -28,4 +27,4 @@ const eqArrays = function(_first, _second) {
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
 assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+assertEqual(eqArrays(["1", 2, "3"], ["1", "2", "3"]), false);
