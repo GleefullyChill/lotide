@@ -19,10 +19,20 @@ const assertArraysEqual = function(_first, _second) {
 };
 
 const letterPositions = function(str) {
+  const obj = [];
+  let index = 0;
+  for (const char of str) {
+    if (char) {
+      (obj[char] ? obj[char].push(index) : obj[char] = [index]);
+    }
+    index++;
+  }
+  return obj;
 }
 
 const hello = letterPositions("hello");
-assertArraysEqual(hello["h"], [1]);
-assertArraysEqual(hello["e"], [2]);
-assertArraysEqual(hello["l"], [3, 4]);
-assertArraysEqual(hello["o"], [5]);
+console.log(hello);
+assertArraysEqual(hello["h"], [0]);
+assertArraysEqual(hello["e"], [1]);
+assertArraysEqual(hello["l"], [2, 3]);
+assertArraysEqual(hello["o"], [4]);
