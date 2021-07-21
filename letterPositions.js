@@ -28,7 +28,7 @@ const letterPositions = function(str) {
     index++;
   }
   return obj;
-}
+};
 
 const hello = letterPositions("hello");
 console.log(hello);
