@@ -5,14 +5,58 @@ const assertEqual = function(actual, expected) {
     console.log(`😱Assertion Failed: ${actual} !== ${expected}`)
   );
 };
-
-const eqObjects = function(object1, object2) {
-
+const eqArrays = function(_first, _second) {
+  //false if not same length
+  if (_first.length !== _second.length) {
+    return false;
+  }
+  for (let i = 0; i <= _first.length - 1; i++) {
+    if (_first[i] !== _second[i]) {
+      return false;
+    }
+  }
+  return true;
 };
 
-const ab = {a: "1", b: "2"};
-const ba = {b: "2", a: "1"};
-eqObjects(ab, ba);
+const eqObjects = function(object1, object2) {
+  let goodCount = 0;
+  if(Object.keys(object1).length !== Object.keys(object2).length) {
+    return false;
+  }
+  for (const key in object1) {
+    for (let i = 0; i < Object.keys(object1).length; i++) {
+      if (object2[key]) {
+        goodCount++;
+        if (Array.isArray(object1[key])) {
+          if (!eqArrays(object1[key],object2[key])) {
+            console.log(2)
+            return false;
+          }
+          console.log(2)
+        //} else if (typeof(object1[key] === 'object')) {
+        //  if (!eqObjects(object1[key], object2[key])) {
+        //    console.log(3)
+        //    return false;
+        //  }
+        } else if (object1[key] !== object2[key]) {
+          return false;
+        };
+      } else {
+        return false;
+      }
+    }
+    if (goodCount !== Object.keys(object1).length) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+};
+
+const ab = {b: 3, a: "2"};
+const ba = {b: "2", a: 3};
+assertEqual(eqObjects(ab, ba), true);
 
 const abc = {a: "1", b: "2", c: "3"};
-eqObjects(ab, abc);
+assertEqual(eqObjects(ab, abc), false);
+
