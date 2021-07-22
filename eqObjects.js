@@ -32,12 +32,6 @@ const eqObjects = function(object1, object2) {
             console.log(2)
             return false;
           }
-          console.log(2)
-        //} else if (typeof(object1[key] === 'object')) {
-        //  if (!eqObjects(object1[key], object2[key])) {
-        //    console.log(3)
-        //    return false;
-        //  }
         } else if (object1[key] !== object2[key]) {
           return false;
         };
@@ -60,3 +54,8 @@ assertEqual(eqObjects(ab, ba), true);
 const abc = {a: "1", b: "2", c: "3"};
 assertEqual(eqObjects(ab, abc), false);
 
+//} else if (typeof(object1[key] === 'object')) {
+//  if (!eqObjects(object1[key], object2[key])) {
+//    console.log(3)
+//    return false;
+//  }
