@@ -34,12 +34,10 @@ const eqObjects = function(object1, object2) {
         } else if (typeof object1[key] === 'object') {
           return eqObjects(object1[key], object2[key]);
         } else if (object1[key] !== object2[key]) {
-          console.log('peanuts')
           return false;
         }
       } else {
         return false;
-      }
     }
     if (goodCount !== Object.keys(object1).length) {
       return false;
