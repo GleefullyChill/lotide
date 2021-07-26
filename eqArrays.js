@@ -6,13 +6,18 @@ const assertEqual = function(actual, expected) {
   );
 };
 
-const eqArrays = function(_first, _second) {
+const eqArrays = function(firstArray, secondArray) {
   //false if not same length
-  if (_first.length !== _second.length) {
+  if (firstArray.length !== secondArray.length) {
     return false;
-  }
-  for (let i = 0; i <= _first.length - 1; i++) {
-    if (_first[i] !== _second[i]) {
+  } //else if (firstArray[0] === undefined)
+  for (let i = 0; i < firstArray.length - 1; i++) {
+    if (Array.isArray(firstArray[i])) {
+      if (eqArrays(firstArray[i], secondArray[i]) === false) {
+        return false;
+      }
+    }
+    if (firstArray[i] !== secondArray[i]) {
       return false;
     }
   }
@@ -26,5 +31,5 @@ const eqArrays = function(_first, _second) {
 //call both functions
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
+assertEqual(eqArrays(["1", ['2',['2']], "4"], ["1", ['2', ['2']], "3"]), false);
 assertEqual(eqArrays(["1", 2, "3"], ["1", "2", "3"]), false);
