@@ -1,0 +1,32 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "A library based off of lodash for a student project",
+  "main": "head.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GleefullyChill/lotide.git"
+  },
+  "keywords": [
+    "lotide",
+    "LHL",
+    "simple",
+    "programs"
+  ],
+  "author": "Luke Lofstrom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GleefullyChill/lotide/issues"
+  },
+  "homepage": "https://github.com/GleefullyChill/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3"
+  }
+}
