@@ -31,7 +31,10 @@ const eqObjects = function(object1, object2) {
           if (!eqArrays(object1[key],object2[key])) {
             return false;
           }
+        } else if (typeof object1[key] === 'object') {
+          return eqObjects(object1[key], object2[key]);
         } else if (object1[key] !== object2[key]) {
+          console.log('peanuts')
           return false;
         }
       } else {
@@ -46,8 +49,8 @@ const eqObjects = function(object1, object2) {
   }
 };
 
-const ab = {b: 3, a: "2"};
-const ba = {b: "2", a: 3};
+const ab = { a: { z: 1 }, b: 2 };
+const ba = { a: { z: 1 }, b: 2 };
 assertEqual(eqObjects(ab, ba), true);
 
 const abc = {a: "1", b: "2", c: "3"};
