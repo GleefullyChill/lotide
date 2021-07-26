@@ -9,4 +9,4 @@ const flatten = function(_arrays) {
   }
   return finalArr;
 };
-console.log(flatten([1,[1,2,[1,2,3],6 , 7 , 8, [9,[10,[11,[15]]]]]]));
+module.exports = flatten;

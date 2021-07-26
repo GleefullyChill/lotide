@@ -1,5 +1,3 @@
-
-const assertEqual = require('./assertEqual');
 const countLetters = function(str) {
   const obj = [];
   for (const char of str) {
@@ -11,6 +9,6 @@ const countLetters = function(str) {
 
 };
  
-
-const printOut = countLetters("friends are free and freedom is free");
-assertEqual(printOut["f"], 4);
+module.exports = countLetters;
+// const printOut = countLetters("friends are free and freedom is free");
+// assertEqual(printOut["f"], 4);
