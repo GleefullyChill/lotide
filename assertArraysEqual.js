@@ -17,5 +17,6 @@ const assertArraysEqual = function(_first, _second) {
     console.log(`😱Assertion Failed: ${_first} !== ${_second}`)
   );
 };
+module.exports = assertArraysEqual;
 
 assertArraysEqual([1, 2], [1, 2]);
