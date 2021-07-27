@@ -10,5 +10,5 @@ describe('Tail', () => {
   it('returns an empty array when given an array with a single object', () => {
     const given = ['hate speech'];
     assert.deepEqual(tail(given), []);
-  })
-})
+  });
+});

@@ -5,4 +5,4 @@ const without = function(source, itemsToRemove) {
   }
   return desired;
 };
- module.exports = without;
+module.exports = without;
